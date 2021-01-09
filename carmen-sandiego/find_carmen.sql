@@ -24,8 +24,28 @@ SELECT * FROM COUNTRY LIMIT 1;
 
 
 -- Clue #1: We recently got word that someone fitting Carmen Sandiego's description has been traveling through Southern Europe. She's most likely traveling someplace where she won't be noticed, so find the least populated country in Southern Europe, and we'll start looking for her there.
-
-
+-- SQL COMMAND:
+-- SELECT population, name FROM country WHERE region = 'Southern Europe';
+-- QUERY RESULTS: 
+--  population |             name              
+------------+-------------------------------
+--     3401200 | Albania
+--       78000 | Andorra
+--     3972000 | Bosnia and Herzegovina
+--    39441700 | Spain
+--       25000 | Gibraltar
+--    57680000 | Italy
+--    10640000 | Yugoslavia
+--    10545700 | Greece
+--     4473000 | Croatia
+--     2024000 | Macedonia
+--      380200 | Malta
+--     9997600 | Portugal
+--       27000 | San Marino
+--     1987800 | Slovenia
+--        1000 | Holy See (Vatican City State)
+-- (15 rows)
+-- CLUE #1 ANSWER: She was seen in the Holy See (Vatican City State).
 
 -- Clue #2: Now that we're here, we have insight that Carmen was seen attending language classes in this country's officially recognized language. Check our databases and find out what language is spoken in this country, so we can call in a translator to work with you.
 
