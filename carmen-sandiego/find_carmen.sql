@@ -72,9 +72,15 @@ SELECT * FROM COUNTRY LIMIT 1;
 -- CLUE #3 ANSWER: The country of 'San Marino' in 'Southern Europe' speaks only Italian.
 
 -- Clue #4: We're booking the first flight out – maybe we've actually got a chance to catch her this time. There are only two cities she could be flying to in the country. One is named the same as the country – that would be too obvious. We're following our gut on this one; find out what other city in that country she might be flying to.
-
-
-
+-- SQL COMMAND:
+-- SELECT * FROM city WHERE countrycode = 'SMR' ORDER BY population ASC;
+-- QUERY RESULTS: 
+--   id  |    name    | countrycode |     district      | population 
+------+------------+-------------+-------------------+------------
+--  3171 | San Marino | SMR         | San Marino        |       2294
+--  3170 | Serravalle | SMR         | Serravalle/Dogano |       4802
+-- (2 rows)
+-- CLUE #4 ANSWER: The other city that Carmen Sandiego could be flying to is 'Serravalle' in the country of 'San Marino' in 'Southern Europe'.  
 
 -- Clue #5: Oh no, she pulled a switch – there are two cities with very similar names, but in totally different parts of the globe! She's headed to South America as we speak; go find a city whose name is like the one we were headed to, but doesn't end the same. Find out the city, and do another search for what country it's in. Hurry!
 
