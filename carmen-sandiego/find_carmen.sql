@@ -47,6 +47,7 @@ SELECT * FROM COUNTRY LIMIT 1;
 -- (15 rows)
 -- CLUE #1 ANSWER: She was seen in the Holy See (Vatican City State).
 
+
 -- Clue #2: Now that we're here, we have insight that Carmen was seen attending language classes in this country's officially recognized language. Check our databases and find out what language is spoken in this country, so we can call in a translator to work with you.
 -- SQL COMMAND:
 -- SELECT countrycode, "language", isofficial, percentage FROM countrylanguage WHERE countrycode = 'VAT';
@@ -71,6 +72,7 @@ SELECT * FROM COUNTRY LIMIT 1;
 -- (4 rows)
 -- CLUE #3 ANSWER: The country of 'San Marino' in 'Southern Europe' speaks only Italian.
 
+
 -- Clue #4: We're booking the first flight out – maybe we've actually got a chance to catch her this time. There are only two cities she could be flying to in the country. One is named the same as the country – that would be too obvious. We're following our gut on this one; find out what other city in that country she might be flying to.
 -- SQL COMMAND:
 -- SELECT * FROM city WHERE countrycode = 'SMR' ORDER BY population ASC;
@@ -82,14 +84,29 @@ SELECT * FROM COUNTRY LIMIT 1;
 -- (2 rows)
 -- CLUE #4 ANSWER: The other city that Carmen Sandiego could be flying to is 'Serravalle' in the country of 'San Marino' in 'Southern Europe'.  
 
+
 -- Clue #5: Oh no, she pulled a switch – there are two cities with very similar names, but in totally different parts of the globe! She's headed to South America as we speak; go find a city whose name is like the one we were headed to, but doesn't end the same. Find out the city, and do another search for what country it's in. Hurry!
-
-
+-- SQL COMMAND: 
+-- SELECT name, countrycode, district FROM city WHERE name LIKE '%Serra%';
+-- QUERY RESULTS: 
+--  name         | countrycode |     district      
+----------------------+-------------+-------------------
+--  Serra                | BRA         | Espï¿½rito Santo
+--  Taboï¿½o da Serra    | BRA         | Sï¿½o Paulo
+--  Itapecerica da Serra | BRA         | Sï¿½o Paulo
+--  Serravalle           | SMR         | Serravalle/Dogano
+-- (4 rows)
+-- CLUE #5 ANSWER (PART 1): The other city with a similar name as 'Serravalle' in 'South America' is 'Serra'.
+-- SQL COMMAND: 
+-- SELECT name FROM country WHERE code = 'BRA';
+-- QUERY RESULTS: 
+--  name  
+--------
+--  Brazil
+-- CLUE #5 ANSWER (PART 2): The country is 'Brazil'. 
 
 
 -- Clue #6: We're close! Our South American agent says she just got a taxi at the airport, and is headed towards the capital! Look up the country's capital, and get there pronto! Send us the name of where you're headed and we'll follow right behind you!
-
-
 
 
 -- Clue #7: She knows we're on to her – her taxi dropped her off at the international airport, and she beat us to the boarding gates. We have one chance to catch her, we just have to know where she's heading and beat her to the landing dock.
