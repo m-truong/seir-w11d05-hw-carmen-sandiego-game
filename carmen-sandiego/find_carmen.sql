@@ -129,9 +129,17 @@ SELECT * FROM COUNTRY LIMIT 1;
 -- CLUE #6 ANSWER: Carmen Sandiego is headed towards 'Brasilia', the capital of Brazil located in the 'Distrito Federal'.  
 
 
+
 -- Clue #7: She knows we're on to her – her taxi dropped her off at the international airport, and she beat us to the boarding gates. We have one chance to catch her, we just have to know where she's heading and beat her to the landing dock.
 -- SQL COMMAND: 
--- 
+-- SELECT name, countrycode, population FROM city WHERE population = 91084;
+--      name     | countrycode | population 
+--------------+-------------+------------
+--  Santa Monica | USA         |      91084
+-- (1 row)
+-- CLUE #7 ANSWER: Carmen Sandiego flew to 'Santa Monica' USA. 
+
+
 
 -- Lucky for us, she's getting cocky. She left us a note, and I'm sure she thinks she's very clever, but if we can crack it, we can finally put her where she belongs – behind bars.
 
@@ -143,9 +151,48 @@ SELECT * FROM COUNTRY LIMIT 1;
 -- In a city of ninety-one thousand and now, eighty five.
 
 
+
+
 -- We're counting on you, gumshoe. Find out where she's headed, send us the info, and we'll be sure to meet her at the gates with bells on.
 
+-- She's in ** Santa Monica, CA, USA ** !
 
 
 
--- She's in ____________________________!
+-- HUNGRY FOR MORE -- 
+
+-- SQL COMMAND:
+-- SELECT * FROM city WHERE id = 211;
+-- QUERY RESULTS: 
+--  id  |    name    | countrycode |     district     | population 
+-----+------------+-------------+------------------+------------
+--  211 | Brasï¿½lia | BRA         | Distrito Federal |    1969868
+-- (1 row)
+-- SQL COMMAND: 
+-- UPDATE city SET name = 'Brasilia' WHERE id = 211;
+-- QUERY RESULTS: 
+-- UPDATE 1 
+-- SQL COMMAND:
+-- SELECT * FROM city WHERE id = 211;
+-- QUERY RESULTS: 
+--  id  |   name   | countrycode |     district     | population 
+-----+----------+-------------+------------------+------------
+--  211 | Brasilia | BRA         | Distrito Federal |    1969868
+-- (1 row)
+-- SQL COMMAND: 
+-- UPDATE city SET name = 'Cordoba' WHERE id = 71;
+-- SELECT id, name, countrycode FROM city WHERE id = 71;
+-- QUERY RESULTS:
+--  id |  name   | countrycode 
+----+---------+-------------
+--  71 | Cordoba | ARG
+-- (1 row)
+-- SQL COMMAND: 
+-- UPDATE city SET name = 'Lanus' WHERE id = 79;
+-- SELECT id, name, countrycode FROM city WHERE id = 79;
+-- QUERY RESULTS:
+--  id |  name   | countrycode 
+----+---------+-------------
+--  79 | Lanus | ARG
+-- (1 row)
+-- SUCCESS! 
